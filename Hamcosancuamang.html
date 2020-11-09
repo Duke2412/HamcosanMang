@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các mảng có sẵn</title>
+</head>
+<body>
+<input type="button" value="Bài 1" onclick="bai1()">
+<input type="button" value="Bài 2" onclick="bai2()">
+<input type="button" value="Bài 3" onclick="bai3()">
+<script>
+    function bai1(){
+        let mycolor = ['Red', 'Green', 'White', 'Black']
+        document.write(mycolor.join(""))
+    }
+function bai2() {
+    let num = window.prompt();
+    let str = num;
+    let result = [str[0]];
+    for (x = 1; x < str.length; x++) {
+        if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
+            result.push('-', str[x]);
+        } else {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+}
+function bai3() {
+    let str = prompt(" ");
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for (x = 0; x < str.length; x++) {
+        if (UPPER.includes(str[x])) {
+            result.push(str[x].toLowerCase());
+        } else if (LOWER.includes(str[x])) {
+            result.push(str[x].toUpperCase());
+        } else {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+}
+</script>
+</body>
+</html>
